@@ -11,7 +11,8 @@
 ​🔒 Безопасность: Работает локально на вашем устройстве, данные никуда не отправляются.
 
 
-​
+​🔑 Gen-Password
+------------------------------------------
 ​A program for creating strong passwords. It is designed for those who do not want to come up with complex combinations in their heads or use overloaded online services.
 
 ​🚀 Features
