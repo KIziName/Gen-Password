@@ -2,6 +2,7 @@
 import sys
 import ctypes
 import atexit
+import os
 
 def _init_system_wide_mutex():
     kernel32 = ctypes.windll.kernel32
@@ -30,17 +31,13 @@ def _init_system_wide_mutex():
         
     atexit.register(lambda: kernel32.CloseHandle(mutex_handle) if mutex_handle else None)
 
-import os
 _init_system_wide_mutex()
 # ======================================================================
 
 import random
 import string
-import sys
 import webbrowser
 import math
-import atexit
-import ctypes
 import customtkinter as ctk
 from tkinter import messagebox
 
@@ -52,15 +49,6 @@ BONUS_MAX_DIVERSITY = 12.0
 NORMALIZER = 75.0
 
 MUTEX_NAME = "Local\\KiziName_Gen-Password_v1.0_Mutex"
-
-# ==================== ЗАЩИТА ОТ ВТОРОГО ЗАПУСКА (Windows) ====================
-kernel32 = ctypes.windll.kernel32
-mutex_handle = kernel32.CreateMutexW(None, False, MUTEX_NAME)
-if kernel32.GetLastError() == 183:
-    messagebox.showerror("Ошибка", "Программа уже запущена!")
-    sys.exit(0)
-
-atexit.register(lambda: kernel32.CloseHandle(mutex_handle) if mutex_handle else None)
 
 # ==================== НАСТРОЙКИ ИНТЕРФЕЙСА ====================
 ctk.set_appearance_mode("System")
