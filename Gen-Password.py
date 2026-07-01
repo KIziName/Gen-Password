@@ -48,8 +48,6 @@ PENALTY_SINGLE_TYPE = 0.75
 BONUS_MAX_DIVERSITY = 12.0
 NORMALIZER = 75.0
 
-MUTEX_NAME = "Local\\KiziName_Gen-Password_v1.0_Mutex"
-
 # ==================== НАСТРОЙКИ ИНТЕРФЕЙСА ====================
 ctk.set_appearance_mode("System")
 ctk.set_default_color_theme("blue")
