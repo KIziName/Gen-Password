@@ -10,6 +10,12 @@
 
 ​🔒 Безопасность: Работает локально на вашем устройстве, данные никуда не отправляются.
 
+📦 Требования
+------------------------------------------
+- Python 3.7 или выше
+- Установите зависимости: `pip install customtkinter`
+
+---
 
 ​🔑 Gen-Password
 ------------------------------------------
@@ -22,3 +28,8 @@
 ​📊 Strength Check: Built-in algorithm to analyze and evaluate the reliability of created combinations.
 
 ​🔒 Security: Works locally on your device, data is never sent anywhere.
+
+📦 Requirements
+------------------------------------------
+- Python 3.7 or higher
+- Install dependencies: `pip install customtkinter`
