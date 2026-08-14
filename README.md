@@ -12,7 +12,7 @@
 
 📦 Требования
 ------------------------------------------
-- Python 3.7 или выше
+- Python 3.8 или выше
 - Установите зависимости: `pip install customtkinter`
 
 ---
@@ -31,5 +31,5 @@
 
 📦 Requirements
 ------------------------------------------
-- Python 3.7 or higher
+- Python 3.8 or higher
 - Install dependencies: `pip install customtkinter`
