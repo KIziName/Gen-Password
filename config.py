@@ -4,10 +4,8 @@ ENTROPY_MEDIUM_THRESHOLD = 58.0
 PENALTY_SINGLE_TYPE = 0.75
 BONUS_MAX_DIVERSITY = 12.0
 NORMALIZER = 75.0
-
 GITHUB_URL = "https://github.com/KIziName/Gen-Password/releases"
 
-# ==================== ЛОКАЛИЗАЦИЯ ====================
 LANGUAGES = {
     "ru": {
         "title": "Gen-Password",
