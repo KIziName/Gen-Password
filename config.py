@@ -6,8 +6,8 @@ BONUS_MAX_DIVERSITY = 12.0
 NORMALIZER = 75.0
 
 # ----- Внешний вид -----
-APPEARANCE_MODE = "System"          # "System", "Light", "Dark"
-COLOR_THEME = "blue"               # "blue", "green", "dark-blue"
+APPEARANCE_MODE = "System"       
+COLOR_THEME = "blue"              
 
 # ----- Размеры окна и отступы -----
 WINDOW_WIDTH = 960
