@@ -10,16 +10,13 @@ class App(ctk.CTk):
         self.current_lang = "ru"
         self.last_error_type = None
 
-        # Настройки темы из конфига
         ctk.set_appearance_mode(config.APPEARANCE_MODE)
         ctk.set_default_color_theme(config.COLOR_THEME)
 
-        # === Сборка интерфейса ===
         self.title(config.LANGUAGES[self.current_lang]["title"])
         self.geometry(f"{config.WINDOW_WIDTH}x{config.WINDOW_HEIGHT}")
         self.resizable(False, False)
 
-        # Верхняя панель
         top_frame = ctk.CTkFrame(self, fg_color="transparent")
         top_frame.pack(fill="x", padx=config.PADX, pady=config.PADY)
 
@@ -36,7 +33,6 @@ class App(ctk.CTk):
         )
         self.btn_about.pack(side="right")
 
-        # Длина пароля
         self.label_length = ctk.CTkLabel(
             self,
             text=config.LANGUAGES[self.current_lang]["length_lbl"],
@@ -48,7 +44,6 @@ class App(ctk.CTk):
         self.entry_length.insert(0, str(config.DEFAULT_LENGTH))
         self.entry_length.pack(pady=5)
 
-        # Чекбоксы
         cb_frame = ctk.CTkFrame(self, fg_color="transparent")
         cb_frame.pack(pady=config.PADY)
 
@@ -85,7 +80,6 @@ class App(ctk.CTk):
         )
         self.label_error.pack(pady=2)
 
-        # Кнопка генерации
         self.btn_generate = ctk.CTkButton(
             self,
             text=config.LANGUAGES[self.current_lang]["btn_gen"],
@@ -94,7 +88,6 @@ class App(ctk.CTk):
         )
         self.btn_generate.pack(pady=5)
 
-        # Поле результата
         self.entry_result = ctk.CTkEntry(
             self,
             width=280,
@@ -103,8 +96,7 @@ class App(ctk.CTk):
             state="readonly",
         )
         self.entry_result.pack(pady=config.PADY)
-
-        # Метка стойкости
+        
         self.lbl_strength = ctk.CTkLabel(
             self,
             text="",
@@ -112,7 +104,6 @@ class App(ctk.CTk):
         )
         self.lbl_strength.pack(pady=(5, 2))
 
-        # Прогресс-бар стойкости
         self.pbar_strength = ctk.CTkProgressBar(
             self,
             width=config.PROGRESSBAR_WIDTH,
@@ -122,7 +113,6 @@ class App(ctk.CTk):
         self.pbar_strength.set(0)
         self.pbar_strength.pack(pady=(0, config.PADY))
 
-        # Кнопка копирования
         self.btn_copy = ctk.CTkButton(
             self,
             text=config.LANGUAGES[self.current_lang]["btn_copy"],
@@ -135,7 +125,6 @@ class App(ctk.CTk):
 
         self.default_copy_color = self.btn_copy.cget("fg_color")
 
-    # === Методы ===
     def clear_result_entry(self):
         self.entry_result.configure(state="normal")
         self.entry_result.delete(0, "end")
