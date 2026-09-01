@@ -71,7 +71,6 @@ class App(ctk.CTk):
         )
         self.cb_symbols.pack(anchor="w", pady=4)
 
-        # Ошибка
         self.label_error = ctk.CTkLabel(
             self,
             text="",
