@@ -10,8 +10,8 @@ APPEARANCE_MODE = "System"
 COLOR_THEME = "blue"              
 
 # ----- Размеры окна и отступы -----
-WINDOW_WIDTH = 960
-WINDOW_HEIGHT = 640
+WINDOW_WIDTH = 480
+WINDOW_HEIGHT = 540
 PADX = 10
 PADY = 10
 
@@ -50,32 +50,14 @@ PROGRESSBAR_HEIGHT = 8
 PROGRESSBAR_CORNER_RADIUS = 4
 
 # ----- Окно "О программе" -----
-ABOUT_WINDOW_WIDTH = 260
-ABOUT_WINDOW_HEIGHT = 140
+ABOUT_WINDOW_WIDTH = 220
+ABOUT_WINDOW_HEIGHT = 150
 
 # ----- Ссылка на GitHub -----
 GITHUB_URL = "https://github.com/KIziName/Gen-Password/releases"
 
 # ----- Локализация -----
 LANGUAGES = {
-    "ru": {
-        "title": "Gen-Password",
-        "length_lbl": "Длина пароля (4-20):",
-        "btn_gen": "Сгенерировать",
-        "btn_copy": "Копировать",
-        "copied": "Скопировано!",
-        "about_btn": "О программе",
-        "about_text": "Автор: KiziName\nВерсия: v1.0",
-        "about_title": "О программе",
-        "error_text": "Ошибка: Введите число от 4 до 20!",
-        "error_no_cb": "Ошибка: Выберите хотя бы один пункт!",
-        "cb_letters": "Буквы (a-Z)",
-        "cb_digits": "Цифры (0-9)",
-        "cb_symbols": "Символы (%@#$)",
-        "strength_weak": "Слабый пароль",
-        "strength_medium": "Средний пароль",
-        "strength_strong": "Надёжный пароль"
-    },
     "en": {
         "title": "Gen-Password",
         "length_lbl": "Password length (4-20):",
