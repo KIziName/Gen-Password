@@ -7,7 +7,7 @@ class App(ctk.CTk):
     def __init__(self):
         super().__init__()
 
-        self.current_lang = "ru"
+        self.current_lang = "en"
         self.last_error_type = None
 
         ctk.set_appearance_mode(config.APPEARANCE_MODE)
@@ -19,11 +19,6 @@ class App(ctk.CTk):
 
         top_frame = ctk.CTkFrame(self, fg_color="transparent")
         top_frame.pack(fill="x", padx=config.PADX, pady=config.PADY)
-
-        self.btn_lang = ctk.CTkButton(
-            top_frame, text="RU", width=40, command=self.switch_language
-        )
-        self.btn_lang.pack(side="left")
 
         self.btn_about = ctk.CTkButton(
             top_frame,
@@ -235,48 +230,3 @@ class App(ctk.CTk):
         )
         lbl_link.pack(pady=5)
         lbl_link.bind("<Button-1>", lambda e: webbrowser.open_new_tab(config.GITHUB_URL))
-
-    def switch_language(self):
-        self.current_lang = "en" if self.current_lang == "ru" else "ru"
-        lang_dict = config.LANGUAGES[self.current_lang]
-
-        self.title(lang_dict["title"])
-        self.label_length.configure(text=lang_dict["length_lbl"])
-        self.btn_generate.configure(text=lang_dict["btn_gen"])
-        self.btn_about.configure(text=lang_dict["about_btn"])
-        self.btn_lang.configure(text="RU" if self.current_lang == "ru" else "EN")
-        self.cb_letters.configure(text=lang_dict["cb_letters"])
-        self.cb_digits.configure(text=lang_dict["cb_digits"])
-        self.cb_symbols.configure(text=lang_dict["cb_symbols"])
-        self.btn_copy.configure(text=lang_dict["btn_copy"])
-
-        if self.entry_result.get():
-            try:
-                length = int(self.entry_length.get())
-                _, pool_size = logic.get_pool_and_size(
-                    self.cb_letters_var.get(),
-                    self.cb_digits_var.get(),
-                    self.cb_symbols_var.get(),
-                )
-                active_types = sum(
-                    [
-                        self.cb_letters_var.get(),
-                        self.cb_digits_var.get(),
-                        self.cb_symbols_var.get(),
-                    ]
-                )
-                progress, text, color = logic.check_strength(
-                    length, pool_size, active_types, self.current_lang
-                )
-                self.lbl_strength.configure(text=text, text_color=color)
-                self.pbar_strength.set(progress)
-            except ValueError:
-                pass
-        else:
-            self.pbar_strength.set(0)
-            self.lbl_strength.configure(text="")
-
-        if self.last_error_type == "length":
-            self.label_error.configure(text=lang_dict["error_text"])
-        elif self.last_error_type == "no_cb":
-            self.label_error.configure(text=lang_dict["error_no_cb"])
