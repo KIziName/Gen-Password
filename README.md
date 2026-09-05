@@ -1,8 +1,8 @@
-​***🔑Gen-Password***
+**🔑Gen-Password**
 
 ​Программа для создания надежных паролей. Она создана для тех, кто не хочет придумывать сложные комбинации из головы или пользоваться перегруженными онлайн-сервисами.
 
-​***🚀Особенности***
+​**🚀Особенности**
 
 ​💻 GUI-интерфейс: Простой графический интерфейс для генерации паролей в один клик.
 
@@ -16,11 +16,11 @@
 - `pip install customtkinter`
 
 
-***🔑Gen-Password***
+**🔑Gen-Password**
 
 ​A program for creating strong passwords. It is designed for those who do not want to come up with complex combinations in their heads or use overloaded online services.
 
-​***🚀Features***
+​**🚀Features**
 
 ​💻 GUI Interface: Simple graphical interface to generate passwords in a single click.
 
